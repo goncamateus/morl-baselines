@@ -243,8 +243,8 @@ def log_episode_info(
         scal_return = scalarization(episode_return)
         disc_scal_return = scalarization(disc_episode_return)
     else:
-        scal_return = scalarization(episode_return, weights)
-        disc_scal_return = scalarization(disc_episode_return, weights)
+        scal_return = scalarization(episode_return, weights.cpu())
+        disc_scal_return = scalarization(disc_episode_return, weights.cpu())
 
     if verbose:
         print("Episode infos:")
