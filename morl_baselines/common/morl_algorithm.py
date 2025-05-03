@@ -263,6 +263,8 @@ class MOAgent(ABC):
 
         config = self.get_config()
         config["algo"] = self.experiment_name
+        config["setup"] = "GPI-LS"
+        config["env"] = env_id.split("-")[1].upper()
         # looks for whether we're using a Gymnasium based env in env_variable
         monitor_gym = strtobool(os.environ.get("MONITOR_GYM", "True"))
 
